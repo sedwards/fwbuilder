@@ -217,7 +217,6 @@ int main( int argc, char *argv[] )
             platforms.size()==1 && platforms.front()=="unknown" ))
     {
         qDebug("Failed to load list of supported platforms");
-        exit(1);
     }
 
     if (cli_print)
@@ -271,13 +270,13 @@ int main( int argc, char *argv[] )
     // setup single shot timer to call startupLoad()
     QTimer::singleShot(500, mw, SLOT(startupLoad()));
 
-    try
-    {
+//    try
+  //  {
         app->exec();
-    } catch (const libfwbuilder::FWException &ex)
-    {
-        qDebug() << "Caught FWException: " << ex.toString().c_str();
-    }
+   // } catch (const libfwbuilder::FWException &ex)
+   // {
+     //   qDebug() << "Caught FWException: " << ex.toString().c_str();
+  //  }
 
     mw->hide();  // must do this before settings object is destroyed
 

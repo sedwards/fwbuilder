@@ -129,8 +129,7 @@ list<string> getDirList(const std::string &dir,
                                       const std::string &ext)
 {
     list<string> res;
-
-#ifndef _WIN32
+#ifndef win32 
     DIR *d=opendir(dir.c_str());
     if (d!=NULL)
     {
@@ -146,7 +145,7 @@ list<string> getDirList(const std::string &dir,
                 res.push_back(rfile);
         }
     }
-    closedir(d);
+    //closedir(d);
 #else
 
     struct _finddata_t c_file;

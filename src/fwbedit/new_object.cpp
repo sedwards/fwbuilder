@@ -222,7 +222,6 @@ bool testPlatform(const string &pl, const string &os)
     if (platforms.empty() || ( platforms.size()==1 && platforms.front()=="unknown" ))
     {
         cout << "Failed to load list of supported platforms" << endl;
-        exit(1);
     }
     for (vector<std::string>::iterator i=platforms.begin();i!=platforms.end();i++)
     {
